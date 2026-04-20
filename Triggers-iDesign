@@ -1,3 +1,4 @@
+Q01)
 create trigger trigger_slab_insert after insert on slab for each row
 begin
 insert into slab_log_history(from_unit, to_unit, rate, action)
@@ -5,6 +6,7 @@ values (new.from_unit, new.to_unit, new.rate, 'Insert_Slab');
 end;
 
 
+Q02)
 CREATE TRIGGER `trigger_electricity_connection_type_insert`
 AFTER INSERT ON `electricity_connection_type`
 FOR EACH ROW
@@ -14,6 +16,7 @@ BEGIN
 END;
 
 
+Q03)
 CREATE TRIGGER trigger_building_type_insert
 AFTER INSERT ON building_type
 FOR EACH ROW
@@ -23,6 +26,7 @@ BEGIN
 END;
 
 
+Q04)
 CREATE TRIGGER trigger_building_bf_update
 BEFORE UPDATE ON building
 FOR EACH ROW
@@ -33,6 +37,7 @@ END;
 
 
 
+Q05)
 CREATE TRIGGER trigger_meter_af_update
 AFTER UPDATE ON meter
 FOR EACH ROW
@@ -43,6 +48,7 @@ END;
 
 
 
+Q06)
 CREATE TRIGGER trigger_building_type_bf_update
 BEFORE UPDATE ON building_type
 FOR EACH ROW
@@ -53,6 +59,7 @@ END;
 
 
 
+Q07)
 CREATE TRIGGER `trigger_electricity_reading_af_update` AFTER UPDATE ON `electricity_reading`
 FOR EACH ROW
 BEGIN
@@ -62,6 +69,7 @@ END;
 
 
 
+Q08)
 CREATE TRIGGER trigger_bill_delete
 AFTER DELETE ON bill
 FOR EACH ROW
@@ -74,6 +82,7 @@ END;
 
 
 
+Q09)
 CREATE TRIGGER trigger_slab_delete
 AFTER DELETE ON slab
 FOR EACH ROW
@@ -84,6 +93,7 @@ END;
 
 
 
+Q10)
 create trigger trigger_electricity_reading_delete after delete on electricity_reading
 for each row begin
 insert into electricity_reading_log_history(meter_id, total_units, action)
